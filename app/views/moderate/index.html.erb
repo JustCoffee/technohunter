@@ -1,0 +1,42 @@
+<h1>Объявления, ожидающие одобрения:</h1>
+<h2> <%= flash[:alert] %> </h2>
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr class="info">
+        <th>Марка</th>
+        <th>Модель</th>
+        <th></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cars.each do |car| %>
+          <tr>
+            <td><%= car.brand %></td>
+            <td><%= car.model %></td>
+              <td><%= link_to 'Show', car %></td>
+              <td><%= button_to "Add", { action: "send_offer", id: car.id, type: "car" }, class: "btn btn-success" %></td>
+              <td><%= button_to "Dell", { action: "dell_offer", id: car.id, type: "car" }, class: "btn btn-danger" %></td>
+          </tr>
+      <% end %>
+      <% @trucks.each do |truck| %>
+          <tr>
+            <td><%= truck.brand %></td>
+            <td><%= truck.model %></td>
+              <td><%= link_to 'Show', truck %></td>
+              <td><%= button_to "Add", { action: "send_offer", id: truck.id, type: "truck" }, class: "btn btn-success" %></td>
+              <td><%= button_to "Dell", { action: "dell_offer", id: truck.id, type: "truck" }, class: "btn btn-danger" %></td>
+          </tr>
+      <% end %>
+      <% @equips.each do |equip| %>
+       <!-- Обеспечение клика по строке -->
+          <td><%= equip.brand %></td>
+          <td><%= equip.model %></td>
+              <td><%= link_to 'Show', equip %></td>
+              <td><%= button_to "Add", { action: "send_offer", id: equip.id, type: "equip" }, class: "btn btn-success" %></td>
+              <td><%= button_to "Dell", { action: "dell_offer", id: equip.id, type: "equip" }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

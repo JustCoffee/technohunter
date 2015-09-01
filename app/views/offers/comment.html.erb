@@ -1,0 +1,14 @@
+<p>Вы закрыли свое предложение, пожалуйста, сообщите о причине закрытия в текстовом поле ниже</p>
+<p>Так же вы можете оставить комментарии и пожелания команде проекта :)</p>
+
+<form method="post" action="/offers/add_comment" class="form-horizontal">
+	<div class="form-group">
+        <label class="col-lg-2 control-label">Введите комментарий:</label>
+        <div class="col-lg-10">
+          <textarea name="comment[]" class="form-control input-sm"></textarea>
+        </div>
+        <input name="offer_id[]" class="hidden" value="<%= params[:offer_id] %>"/>
+        <input name="type[]" class="hidden" value="<%= params[:type] %>"/>
+        <button class="btn btn-primary">Отправить</button>
+    </div>  
+</form>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+
+    .main_text {
+      float: left;
+      width: 75%;
+    }
+    .search {
+      float: left;
+      width: 20%;
+    }
+    .clear {
+      clear: left;
+    }
+    .prob {
+      width: 5%;
+      float: left;
+    }
+    .navbar-nav > li > a {padding-top:35px !important; padding-bottom:15px !important;}
+    .navbar {min-height:100px !important}
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- Брэнд имг -->
+      <a class="navbar-brand" href="<%= root_path %>"><img src="/images/logo-4.png" /></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+
+
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="<%= offers_path %>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>Предложения </strong><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a  href="<%= cars_path %>">Легковые автомобили</a></li>
+            <li><a href="<%= trucks_path %>">Грузовые и спецтехника</a></li>
+            <li><a href="<%= equips_path %>">Оборудование</a></li>
+          </ul>
+        </li>
+        <li><a href="../home/companies"><strong>Лизинговым компаниям и банкам</strong></a></li>
+        <li><a href="../home/about"><strong>О компании</strong></a></li>
+        <% if !user_signed_in? %>
+          <li><a href="<%= new_user_session_path %>"><strong>Вход</strong></a></li>
+        <% end %>
+<!-- <li></li> -->
+      	<% if user_signed_in? %>
+        	<li><a href="<%= destroy_user_session_path %>" data-method="delete"><strong>Выход</strong></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<ul class="nav nav-pills">
+  <% if user_signed_in? %>
+    <li><a href="<%= profile_show_path %>">Профиль</a></li>
+  <% end %>
+  <% if can? :create, @application %>
+    <li class="active"><a href="/offers/new">Добавить объявление</a></li>
+  <% end %>
+        <% if can? :show_moder_panel, @application %>
+          <li class="dropdown">
+            <a href="<%= offers_path %>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Меню модератора <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="<%= moderate_index_path %>">Лист модерации</a></li>
+              <li><a href="/bids/show">Заявки</a></li>
+              <li><a href="<%= new_user_registration_path %>">Зарегистрировать пользователя</a></li>
+            </ul>
+          </li>
+        <% end %>
+</ul>
+
+<!-- Контейнер делает отступы -->
+<div class="container">
+  <div class="left_otstup">
+    <p> </p>
+  </div>
+
+  <div class="main_text">
+    <%= yield %>
+  </div>
+
+  <div class="prob">
+    <p> </p>
+  </div>
+
+  <div class="search">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2 class="panel-title">Поиск</h2>
+      </div>
+      
+      <div class="panel-body">
+        <form role="form" accept-charset="UTF-8" action="/search/result" id="search" method="post">
+          <fieldset>
+
+            <div class="form-group">
+              <label for="region">Регион:</label>
+              <div>
+                <%= select_tag "region", options_for_select(Region.all.collect {|region| [region.name, region.region_id]},0),{class: "form-control", :include_blank => "Выберите регион..."} %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="city">Город:</label>
+              <div>
+                <%= select_tag "city", options_for_select({},0),{class: "form-control", :include_blank => "Выберите город..."} %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="select" >*Тип техники (обязательно!):</label>
+              <div>
+                <select class="form-control" id="auto_type" name="Auto" type="auto_type">
+                  <option>Выбирете тип...</option>
+                  <option selected="true" value="1">Легковой транспорт</option>
+                  <option value="2">Грузовой транспорт и спецтехника</option>
+                  <option value="3">Оборудование</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="brand">Марка:</label>
+              <div>
+                <%= select_tag "brand", options_for_select({},0),{class: "form-control",:include_blank => "Выберите марку..."} %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="brand">Модель:</label>
+              <div>
+                <%= select_tag "model_search", options_for_select({},0),{class: "form-control", :include_blank => "Выберите модель..."} %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Год выпуска:</label>
+              <div>
+                <input name="yearFrom" placeholder="От" class="form-control input-sm" type="number"></input>
+                <input name="yearUntil" placeholder="До" class="form-control input-sm" type="number"></input>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Цена:</label>
+              <div>
+                <input name="priceFrom" placeholder="От" class="form-control input-sm" type="number"></input>
+                <input name="priceUntil" placeholder="До" class="form-control input-sm" type="number"></input>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <button type="submit" class="btn btn-primary">Найти</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

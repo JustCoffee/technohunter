@@ -1,0 +1,146 @@
+<script>
+  $(function() {
+      $('.spoiler-body').hide();
+      $('.spoiler-head').click(function(){
+          $(this).next().toggle();
+      })
+  });
+
+$(document).ready(function(){
+  $(":checkbox").change(function() {
+    if (!$(this).is(":checked")){
+      console.log("Выключить");
+      $('#button').attr('disabled','disable');
+    }
+    else{
+      console.log("Включить");
+      $('#button').removeAttr('disabled');
+    }
+  });
+});
+</script>
+
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron">
+    <h2><%= @equip.brand %> <%= @equip.model %></h2>
+
+<div>
+    <div class="fotorama" data-nav="thumbs">
+      <% @pic.each do |pic| %>
+        <a href="<%= pic.image.url(:large) %>"><%= image_tag pic.image.url(:large) %></a>
+      <% end %>
+    </div>
+
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr>
+          <td class="text-primary">
+            Регион
+          </td>
+          <td>
+            <%= @equip.region %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-primary">
+            Город
+          </td>
+          <td>
+            <%= @equip.city %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-primary">
+            Вид оборудования
+          </td>
+          <td>
+            <%= @equip.equip_type %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-primary">
+            Марка
+          </td>
+          <td>
+            <%= @equip.brand %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-primary">
+            Модель
+          </td>
+          <td>
+            <%= @equip.model %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-primary">
+            Год выпуска
+          </td>
+          <td>
+            <%= @equip.year %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-primary">
+            Наработка(часов)
+          </td>
+          <td>
+            <%= @equip.hofuse %>
+          </td>
+        </tr> 
+        <tr>
+          <td class="text-primary">
+            Состояние
+          </td>
+          <td>
+            <%= @equip.status %>
+          </td>
+        </tr> 
+        <tr>
+          <td class="text-primary">
+            Цена
+          </td>
+          <td class="text-success">
+            <strong> <%= @equip.price %> руб. </strong>
+          </td>
+        </tr> 
+      </tbody>
+    </table> 
+</div> 
+<div>
+    <%= @equip.desc %> <br><br> 
+</div>
+    <% if can? :update_equip, @equip %>
+      <a href="<%= edit_equip_path(@equip) %>" class="btn btn-success">Редактировать</a>
+    <% end %>
+
+      <a href="#new_bid" id="popup" class="btn btn-success">Оставить заявку</a>
+
+    <a href="<%= equips_path %>" class="btn btn-default">Назад</a>
+</div>
+    <div class="hidden">
+      <form class="new_bid" id="new_bid">
+        <p><strong>Оставьте свои контактные данные,<br>
+             наш менеджер с Вами свяжется.</strong></p>
+        <input type="text" name="bid[fname]" placeholder="Имя" /><br>
+        <input type="text" name="bid[lname]" placeholder="Фамилия" /><br>
+        <input type="text" name="bid[patr]" placeholder="Отчество" /><br>
+        <input type="tel" name="bid[tel]" placeholder="Телефон" /><br>
+        <input type="email" name="bid[email]" placeholder="Email" /><br>
+
+        <input type="checkbox" checked="true" class="check" id="check" name="bid[terms]"> Я согласен с политикой конфиденциальности. 
+
+        <div><a target="_blank" href="../home/terms">Политика конфиденциальности</a></div>
+
+        <input class="hidden" name="bid[offer]" value="<%= @equip.id %>"></p>
+        <input class="hidden" name="bid[aut_type]" value="equip"></p>
+        <button class="button" id="button" type="submit" >Отправить</button>
+      </form>
+    </div>

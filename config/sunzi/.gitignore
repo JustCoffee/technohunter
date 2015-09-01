@@ -1,0 +1,6 @@
+/compiled
+
+# Ignore sens data
+
+sunzi.yml
+files/deploy_key

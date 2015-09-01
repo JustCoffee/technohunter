@@ -23,6 +23,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+group :production do
+  gem 'unicorn', '~> 4.8.3'
+end
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
@@ -30,18 +34,13 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-group :development do
-	gem 'capistrano-rails'
-	gem 'capistrano-bundler'
-	gem 'capistrano-rbenv', "~> 2.0"
-end
-
+# gem 'debugger', group: [:development, :test]
 gem 'devise', '3.2.2'
 gem 'cancancan', '~> 1.10'
 

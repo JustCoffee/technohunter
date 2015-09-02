@@ -1,0 +1,28 @@
+<h1>Итоги поиска:</h1>
+<table class="table table-striped table-hover ">
+  <thead>
+  </thead>
+
+  <tbody>
+    <% @autos.each do |auto| %>
+     <!-- Обеспечение клика по строке -->
+      <tr onclick="window.location = '../<%= @ref %>/<%= auto.id %>'">
+        <% if auto.pictures.first %>
+          <td width="200px"><%= image_tag auto.pictures.first.image.url(:small) %></td>
+          <% else %>
+            <td>НЕТ ФОТО</td>
+        <% end %>
+        <td><strong><%= auto.brand %> <%= auto.model %>, <%= auto.year %><br></strong>
+                    <%= auto.price %> руб.<br>
+                    <%= auto.region %>, <%= auto.city %><br><br>
+                    Объявление создано:<br>
+                    <%= auto.created_at %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @autos %>
+<br>

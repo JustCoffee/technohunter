@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h2>Список грузовых автомобилей и спецтехники:</h2>
+</div>
+
+<table class="table table-striped table-hover ">
+  <thead>
+  </thead>
+
+  <tbody>
+    <% @trucks.each do |truck| %>
+     <!-- Обеспечение клика по строке -->
+      <tr onclick="window.location = 'trucks/<%= truck.id %>'">
+        <% if truck.pictures.first %>
+          <td width="200px"><%= image_tag truck.pictures.first.image.url(:small) %></td>
+          <% else %>
+            <td>НЕТ ФОТО</td>
+        <% end %>
+        <td style="cursor: pointer;"><strong><%= truck.brand %> <%= truck.model %>, <%=truck.year%><br></strong>
+                    <%= truck.price %> руб.<br>
+                    <%= truck.region %>, <%= truck.city %><br><br>
+                    Объявление создано:<br>
+                    <%= truck.created_at %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @trucks %>
+<br>
+
+<% if can? :create, Truck %>
+  <a href="<%= new_truck_path %>" class="btn btn-default">Создать новое</a>
+<% end %>

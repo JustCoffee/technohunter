@@ -1,0 +1,176 @@
+<%= form_for(@car, :url => new_car_path, html: { multipart: true, :class => "form-horizontal" }) do |f| %>
+
+  <% if @car.errors.any? %>
+    <div id="error_explanation">
+      <h2>Пожалуйста, исправьте данные ошибки:</h2>
+
+      <ul>
+      <% @car.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="region">Регион:</label>
+      <div class="col-sm-4">
+        <%= f.select :region, options_for_select(Region.all.collect {|region| [region.name]},0),{:include_blank => "Выберите регион..."}, {class: "form-control input-sm", type: "text"} %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="city">Город:</label>
+      <div class="col-sm-4">
+        <%= f.select :city, options_for_select({},0),{:include_blank => "Выберите город..."},{class: "form-control input-sm", type: "text"} %>
+      </div>
+    </div>
+
+    <div class="form-group" >
+      <label class="col-sm-3 control-label" for="car_brand" >Марка:</label>
+      <div class="col-sm-4">
+        <%= f.select :brand, options_for_select(@brands.collect {|brand| [brand.name]},1), {:include_blank => "Выберите марку..."}, { class: "form-control input-sm", type: "text"} %>
+      </div>
+    </div>
+
+    <div style="display: none;" id="other_brand">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Введите марку:</label>
+        <div class="col-sm-4">
+          <input name="other_brand[]" class="form-control input-sm"></input>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: none;" id="model" class="form-group">
+      <label class="col-sm-3 control-label" for="car_model" >Модель:</label>
+      <div class="col-sm-4">
+        <%= f.select :model, options_for_select(@marks.collect {|mark| [mark.name]},0), {:include_blank => "Выберите модель..."}, { class: "form-control input-sm"} %>
+      </div>
+    </div>
+
+    <div style="display: none;" id="other_model">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Введите модель:</label>
+        <div class="col-sm-4">
+          <input name="other_model[]" class="form-control input-sm"></input>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="car_engine">Тип двигателя:</label>
+      <div class="col-sm-4">
+        <%= f.select :engine, {},{},{class: "form-control input-sm"} do %> 
+          <% ["Бензин","Дизель","Гибрид","Электро","Газ"].each do |x| -%>
+              <%= content_tag(:option, x) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="car_cuzov">Тип кузова:</label>
+      <div class="col-sm-4">
+        <%= f.select :cuzov, {},{},{class: "form-control input-sm"} do %>
+          <% ["Седан","Хетчбэк","Универсал","Минивэн","Пикап",
+              "Фургон","Микроавтобус","Внедорожник","Кабриолет",
+              "Кроссовер","Купе"].each do |x| -%>
+              <%= content_tag(:option, x) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>    
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="probeg">VIN/Заводской номер:</label>
+      <div class="col-sm-4">
+        <%= f.text_field :vin_code, class: "form-control input-sm " %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="probeg">Пробег</label>
+      <div class="col-sm-4">
+        <%= f.text_field :probeg, class: "form-control input-sm " %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="car_kpp">Коробка:</label>
+      <div class="col-sm-4">
+        <%= f.select :kpp, {},{},{class: "form-control input-sm"} do %>
+          <% ["Механика","Автомат","Вариатор","Робот"].each do |x| -%>
+              <%= content_tag(:option, x) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="car_engv">Объем</label>
+      <div class="col-sm-4">
+        <%= f.text_field :engv, class: "form-control input-sm"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="car_privod">Привод:</label>
+      <div class="col-sm-4">
+        <%= f.select :privod, {},{},{class: "form-control input-sm"} do %>
+          <% ["Передний","Задний","Полный"].each do |x| -%>
+              <%= content_tag(:option, x) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label rfield" for="car_year">Год выпуска</label>
+      <div class="col-sm-4">
+        <%= f.text_field :year, class: "form-control input-sm" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="car_sost" >Состояние:</label>
+      <div class="col-sm-4">
+        <%= f.select :sost, {},{},{class: "form-control input-sm"} do %>
+          <% ["Отличное","Хорошее","Удовлетворительное","Плохое"].each do |x| -%>
+            <%= content_tag(:option, x) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="photo">Фото</label>
+      <div class="col-sm-4">
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="offer_desc">Описание</label>
+      <div class="col-sm-4">
+        <%= f.text_area :desc, class: "form-control", cols: 50, rows: 7  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="price">Цена:</label>
+      <div class="col-sm-4">
+        <%= f.text_field :price, class: "form-control input-sm" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= f.submit "Создать", class: "btn btn-primary"%>
+        <a href="<%= cars_path %>" class="btn btn-default">Назад</a>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

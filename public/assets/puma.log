@@ -1,0 +1,936 @@
+=== puma startup: 2015-09-09 14:41:17 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+- Goodbye!
+=== puma startup: 2015-09-09 14:46:34 +0000 ===
+Started GET "/" for 213.87.143.46 at 2015-09-09 14:46:49 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (92.3ms)
+Completed 200 OK in 270ms (Views: 136.9ms | ActiveRecord: 9.8ms)
+Started GET "/" for 185.79.100.48 at 2015-09-09 14:53:10 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 1.6ms)
+Started GET "/" for 185.79.100.48 at 2015-09-09 14:53:15 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 35ms (Views: 28.1ms | ActiveRecord: 1.7ms)
+Started GET "/cars/5" for 185.79.100.48 at 2015-09-09 14:56:23 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.6ms)
+Started GET "/cars/5?bid%5Bfname%5D=Ddd&bid%5Blname%5D=Dodd&bid%5Bpatr%5D=Dd&bid%5Btel%5D=222&bid%5Bemail%5D=ddd&bid%5Bterms%5D=on&bid%5Boffer%5D=5&bid%5Baut_type%5D=car" for 185.79.100.48 at 2015-09-09 14:56:57 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Ddd", "lname"=>"Dodd", "patr"=>"Dd", "tel"=>"222", "email"=>"ddd", "terms"=>"on", "offer"=>"5", "aut_type"=>"car"}, "id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+Started GET "/moderate/index" for 46.250.159.231 at 2015-09-09 15:10:32 +0000
+Processing by ModerateController#index as HTML
+  Rendered moderate/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 10.9ms | ActiveRecord: 4.3ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:10:34 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 75ms (Views: 69.8ms | ActiveRecord: 2.0ms)
+Started GET "/cars/5" for 46.250.159.231 at 2015-09-09 15:10:35 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.6ms)
+Started POST "/cars/bids/create" for 46.250.159.231 at 2015-09-09 15:11:48 +0000
+Processing by BidsController#create as JS
+  Parameters: {"POST /cars/bids/create HTTP/1.1\r\nHost: technohunter.ru\r\nAccept: text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*"=>nil, "q"=>"0.01\r\nX-Requested-With: XMLHttpRequest\r\nAccept-Encoding: gzip, deflate\r\nAccept-Language: ru\r\nContent-Type:"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/bids_controller.rb:10:in `create'
+
+
+Started GET "/cars/5?bid%5Bfname%5D=%D0%98%D0%B2%D0%B0%D0%BD&bid%5Blname%5D=%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2&bid%5Bpatr%5D=%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87&bid%5Btel%5D=89851723559&bid%5Bemail%5D=roman%40roman.ru&bid%5Bterms%5D=on&bid%5Boffer%5D=5&bid%5Baut_type%5D=car" for 46.250.159.231 at 2015-09-09 15:11:48 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Иван", "lname"=>"Иванов", "patr"=>"Иванович", "tel"=>"89851723559", "email"=>"roman@roman.ru", "terms"=>"on", "offer"=>"5", "aut_type"=>"car"}, "id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.4ms)
+Started GET "/bids/show" for 46.250.159.231 at 2015-09-09 15:12:01 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+Started GET "/bids/show" for 46.250.159.231 at 2015-09-09 15:12:55 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+Started GET "/bids/show" for 46.250.159.231 at 2015-09-09 15:12:57 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:13:01 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:16:29 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.5ms)
+Started GET "/moderate/index" for 46.250.159.231 at 2015-09-09 15:16:32 +0000
+Processing by ModerateController#index as HTML
+  Rendered moderate/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.7ms)
+Started GET "/bids/show" for 46.250.159.231 at 2015-09-09 15:16:35 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.5ms)
+Started GET "/users/sign_up" for 46.250.159.231 at 2015-09-09 15:16:38 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:17:50 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 31ms (Views: 25.7ms | ActiveRecord: 1.5ms)
+Started GET "/offers/new" for 46.250.159.231 at 2015-09-09 15:17:55 +0000
+Processing by OffersController#new as HTML
+  Rendered offers/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 1.2ms)
+Started GET "/cars/new" for 46.250.159.231 at 2015-09-09 15:17:56 +0000
+Processing by CarsController#new as HTML
+  Rendered cars/_form.html.erb (21.2ms)
+  Rendered cars/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 38ms (Views: 28.5ms | ActiveRecord: 2.4ms)
+Started GET "/cars/new" for 46.250.159.231 at 2015-09-09 15:22:22 +0000
+Processing by CarsController#new as HTML
+  Rendered cars/_form.html.erb (61.6ms)
+  Rendered cars/new.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 240ms (Views: 85.1ms | ActiveRecord: 152.7ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:22:27 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 43ms (Views: 29.8ms | ActiveRecord: 6.7ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:22:37 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:32:36 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 39ms (Views: 33.8ms | ActiveRecord: 1.7ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:32:41 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+Started GET "/users/sign_up" for 46.250.159.231 at 2015-09-09 15:32:44 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+Started GET "/bids/show" for 46.250.159.231 at 2015-09-09 15:32:50 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.4ms)
+Started GET "/moderate/index" for 46.250.159.231 at 2015-09-09 15:32:53 +0000
+Processing by ModerateController#index as HTML
+  Rendered moderate/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 0.9ms)
+Started GET "/update_cities?region_id=4925&_=1441812143950" for 46.250.159.231 at 2015-09-09 15:33:11 +0000
+Processing by SearchController#update_cities as JS
+  Parameters: {"region_id"=>"4925", "_"=>"1441812143950"}
+  Rendered search/_city.html.erb (26.2ms)
+  Rendered search/update_cities.js.coffee (144.1ms)
+Completed 200 OK in 154ms (Views: 131.9ms | ActiveRecord: 19.3ms)
+Started GET "/search/update_brands?type_id=2&_=1441812143951" for 46.250.159.231 at 2015-09-09 15:33:14 +0000
+Processing by SearchController#update_brands as JS
+  Parameters: {"type_id"=>"2", "_"=>"1441812143951"}
+  Rendered search/_brand.html.erb (11.1ms)
+  Rendered search/update_brands.js.coffee (16.6ms)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 2.9ms)
+Started POST "/search/result" for 46.250.159.231 at 2015-09-09 15:33:17 +0000
+Processing by SearchController#result as HTML
+  Parameters: {"region"=>"4925", "city"=>"", "Auto"=>"2", "brand"=>"", "model_search"=>"", "yearFrom"=>"", "yearUntil"=>"", "priceFrom"=>"", "priceUntil"=>""}
+Санкт-Петербург и область
+ region = :region AND moder = true AND NOT offer_status = 0
+  Rendered search/result.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 2.3ms)
+Started GET "/trucks/1" for 46.250.159.231 at 2015-09-09 15:33:20 +0000
+Processing by TrucksController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered trucks/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.5ms)
+Started GET "/offers/new" for 46.250.159.231 at 2015-09-09 15:33:44 +0000
+Processing by OffersController#new as HTML
+  Rendered offers/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.3ms)
+Started GET "/trucks/new" for 46.250.159.231 at 2015-09-09 15:33:46 +0000
+Processing by TrucksController#new as HTML
+  Rendered trucks/_form.html.erb (16.0ms)
+  Rendered trucks/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.4ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:33:53 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.7ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:33:57 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 46.250.159.231 at 2015-09-09 15:34:05 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"U+UZjw3n9U/gpYSlObBEhfZr7WlNam9dZM8/hMy8yFw="}
+Redirected to http://technohunter.ru/
+Completed 302 Found in 52ms (ActiveRecord: 19.6ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:34:05 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 1.5ms)
+Started GET "/users/sign_in" for 46.250.159.231 at 2015-09-09 15:34:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+Started POST "/users/sign_in" for 46.250.159.231 at 2015-09-09 15:34:31 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sSOIM3Z3jbU97Zruw/agP2EvKaiZhJ3p4zEcKayMPGo=", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Войти"}
+Redirected to http://technohunter.ru/
+Completed 302 Found in 164ms (ActiveRecord: 10.5ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:34:31 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 1.9ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:34:36 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 32ms (Views: 26.1ms | ActiveRecord: 3.7ms)
+Started GET "/offers/new" for 46.250.159.231 at 2015-09-09 15:34:44 +0000
+Processing by OffersController#new as HTML
+  Rendered offers/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+Started GET "/cars/new" for 46.250.159.231 at 2015-09-09 15:34:46 +0000
+Processing by CarsController#new as HTML
+  Rendered cars/_form.html.erb (22.3ms)
+  Rendered cars/new.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.8ms)
+Started GET "/profile/show" for 46.250.159.231 at 2015-09-09 15:34:50 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 2.0ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:34:52 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 1.5ms)
+Started GET "/trucks" for 46.250.159.231 at 2015-09-09 15:35:02 +0000
+Processing by TrucksController#index as HTML
+  Rendered trucks/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 1.4ms)
+Started GET "/search/update_brands?type_id=3&_=1441812886839" for 46.250.159.231 at 2015-09-09 15:35:13 +0000
+Processing by SearchController#update_brands as JS
+  Parameters: {"type_id"=>"3", "_"=>"1441812886839"}
+  Rendered search/_brand.html.erb (8.7ms)
+  Rendered search/update_brands.js.coffee (12.2ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 1.1ms)
+Started GET "/update_cities?region_id=4312&_=1441812886840" for 46.250.159.231 at 2015-09-09 15:35:18 +0000
+Processing by SearchController#update_cities as JS
+  Parameters: {"region_id"=>"4312", "_"=>"1441812886840"}
+  Rendered search/_city.html.erb (8.8ms)
+  Rendered search/update_cities.js.coffee (14.7ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+Started POST "/search/result" for 46.250.159.231 at 2015-09-09 15:35:24 +0000
+Processing by SearchController#result as HTML
+  Parameters: {"region"=>"4312", "city"=>"", "Auto"=>"3", "brand"=>"", "model_search"=>"", "yearFrom"=>"", "yearUntil"=>"", "priceFrom"=>"", "priceUntil"=>""}
+Москва и Московская обл.
+ region = :region AND moder = true AND NOT offer_status = 0
+  Rendered search/result.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+Started GET "/search/update_brands?type_id=2&_=1441812925516" for 46.250.159.231 at 2015-09-09 15:35:30 +0000
+Processing by SearchController#update_brands as JS
+  Parameters: {"type_id"=>"2", "_"=>"1441812925516"}
+  Rendered search/_brand.html.erb (1.0ms)
+  Rendered search/update_brands.js.coffee (4.7ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+Started GET "/update_cities?region_id=4312&_=1441812925517" for 46.250.159.231 at 2015-09-09 15:35:33 +0000
+Processing by SearchController#update_cities as JS
+  Parameters: {"region_id"=>"4312", "_"=>"1441812925517"}
+  Rendered search/_city.html.erb (6.1ms)
+  Rendered search/update_cities.js.coffee (9.8ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+Started POST "/search/result" for 46.250.159.231 at 2015-09-09 15:35:35 +0000
+Processing by SearchController#result as HTML
+  Parameters: {"region"=>"4312", "city"=>"", "Auto"=>"2", "brand"=>"", "model_search"=>"", "yearFrom"=>"", "yearUntil"=>"", "priceFrom"=>"", "priceUntil"=>""}
+Москва и Московская обл.
+ region = :region AND moder = true AND NOT offer_status = 0
+  Rendered search/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+Started GET "/search/update_brands?type_id=3&_=1441812935930" for 46.250.159.231 at 2015-09-09 15:35:38 +0000
+Processing by SearchController#update_brands as JS
+  Parameters: {"type_id"=>"3", "_"=>"1441812935930"}
+  Rendered search/_brand.html.erb (1.0ms)
+  Rendered search/update_brands.js.coffee (2.8ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+Started GET "/update_cities?region_id=4312&_=1441812935931" for 46.250.159.231 at 2015-09-09 15:35:40 +0000
+Processing by SearchController#update_cities as JS
+  Parameters: {"region_id"=>"4312", "_"=>"1441812935931"}
+  Rendered search/_city.html.erb (9.9ms)
+  Rendered search/update_cities.js.coffee (16.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+Started GET "/update_cities?region_id=&_=1441812935932" for 46.250.159.231 at 2015-09-09 15:35:44 +0000
+Processing by SearchController#update_cities as JS
+  Parameters: {"region_id"=>"", "_"=>"1441812935932"}
+  Rendered search/_city.html.erb (5.5ms)
+  Rendered search/update_cities.js.coffee (8.9ms)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 5.0ms)
+Started POST "/search/result" for 46.250.159.231 at 2015-09-09 15:35:46 +0000
+Processing by SearchController#result as HTML
+  Parameters: {"region"=>"", "city"=>"", "Auto"=>"3", "brand"=>"", "model_search"=>"", "yearFrom"=>"", "yearUntil"=>"", "priceFrom"=>"", "priceUntil"=>""}
+ moder = true AND NOT offer_status = 0
+  Rendered search/result.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.9ms)
+Started GET "/equips/1" for 46.250.159.231 at 2015-09-09 15:35:54 +0000
+Processing by EquipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered equips/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.8ms)
+Started GET "/home/about" for 46.250.159.231 at 2015-09-09 15:36:08 +0000
+Processing by HomeController#about as HTML
+  Rendered home/about.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+Started GET "/home/companies" for 46.250.159.231 at 2015-09-09 15:36:10 +0000
+Processing by HomeController#companies as HTML
+  Rendered home/companies.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+Started GET "/" for 208.115.113.84 at 2015-09-09 15:40:12 +0000
+Processing by OffersController#index as */*
+  Rendered offers/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 55ms (Views: 48.3ms | ActiveRecord: 2.0ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:58:36 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 1.6ms)
+Started GET "/home/about" for 46.250.159.231 at 2015-09-09 15:58:40 +0000
+Processing by HomeController#about as HTML
+  Rendered home/about.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+Started GET "/home/companies" for 46.250.159.231 at 2015-09-09 15:58:42 +0000
+Processing by HomeController#companies as HTML
+  Rendered home/companies.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.2ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 15:58:48 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 1.6ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 16:24:59 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 1.6ms)
+Started GET "/cars/8" for 46.250.159.231 at 2015-09-09 16:25:09 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendered cars/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.9ms)
+Started GET "/home/companies" for 46.250.159.231 at 2015-09-09 16:25:27 +0000
+Processing by HomeController#companies as HTML
+  Rendered home/companies.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+Started GET "/wp-login.php" for 94.159.62.90 at 2015-09-09 16:28:32 +0000
+
+ActionController::RoutingError (No route matches [GET] "/wp-login.php"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started GET "/10/Classes/Language.php" for 193.19.118.8 at 2015-09-09 16:46:05 +0000
+
+ActionController::RoutingError (No route matches [GET] "/10/Classes/Language.php"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started GET "/" for 213.180.206.205 at 2015-09-09 17:13:53 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 1.6ms)
+Started GET "/cars/5?bid%5Bfname%5D=Ddd&bid%5Blname%5D=Dodd&bid%5Bpatr%5D=Dd&bid%5Btel%5D=222&bid%5Bemail%5D=ddd&bid%5Bterms%5D=on&bid%5Boffer%5D=5&bid%5Baut_type%5D=car" for 81.88.209.175 at 2015-09-09 17:19:10 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Ddd", "lname"=>"Dodd", "patr"=>"Dd", "tel"=>"222", "email"=>"ddd", "terms"=>"on", "offer"=>"5", "aut_type"=>"car"}, "id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 27ms (Views: 20.2ms | ActiveRecord: 4.4ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 17:25:58 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 1.5ms)
+Started GET "/users/sign_in" for 81.88.209.175 at 2015-09-09 17:26:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+Started POST "/users/sign_in" for 81.88.209.175 at 2015-09-09 17:26:08 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nsNpPjd/KXoVVlucdxwqv8BwfhFP8pBdL6bRTRJAwM=", "user"=>{"email"=>"admin@site.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Войти"}
+Redirected to http://xn--80ajb4aberjfzc.xn--p1ai/
+Completed 302 Found in 99ms (ActiveRecord: 3.4ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 17:26:08 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 2.0ms)
+Started GET "/cars/8" for 81.88.209.175 at 2015-09-09 17:26:14 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendered cars/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 17:26:34 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 32ms (Views: 26.6ms | ActiveRecord: 2.3ms)
+Started GET "/apple-touch-icon-152x152-precomposed.png" for 46.250.159.231 at 2015-09-09 17:26:35 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-152x152-precomposed.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started GET "/apple-touch-icon-152x152.png" for 46.250.159.231 at 2015-09-09 17:26:35 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-152x152.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started GET "/apple-touch-icon.png" for 46.250.159.231 at 2015-09-09 17:26:35 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started GET "/apple-touch-icon.png" for 46.250.159.231 at 2015-09-09 17:26:35 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started GET "/apple-touch-icon-precomposed.png" for 46.250.159.231 at 2015-09-09 17:26:35 +0000
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started DELETE "/users/sign_out" for 46.250.159.231 at 2015-09-09 17:26:39 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mk8zdblzv4kXgndXxAXnTj3MMT/uH9D9eHWux9f5dio="}
+Redirected to http://technohunter.ru/
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+Started GET "/" for 46.250.159.231 at 2015-09-09 17:26:39 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 32ms (Views: 27.1ms | ActiveRecord: 1.6ms)
+Started GET "/users/sign_in" for 46.250.159.231 at 2015-09-09 17:26:41 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+Started POST "/cars/bids/create" for 81.88.209.175 at 2015-09-09 17:26:48 +0000
+Processing by BidsController#create as JS
+  Parameters: {"bid"=>{"fname"=>"Николай", "lname"=>"Иванов", "patr"=>"Тест", "tel"=>"84956745463", "email"=>"gg@g.com", "terms"=>"on", "offer"=>"8", "aut_type"=>"car"}}
+Started GET "/cars/8?bid%5Bfname%5D=%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9&bid%5Blname%5D=%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2&bid%5Bpatr%5D=%D0%A2%D0%B5%D1%81%D1%82&bid%5Btel%5D=84956745463&bid%5Bemail%5D=gg%40g.com&bid%5Bterms%5D=on&bid%5Boffer%5D=8&bid%5Baut_type%5D=car" for 81.88.209.175 at 2015-09-09 17:26:48 +0000
+Processing by CarsController#show as HTML
+  Rendered bids/create.html.erb within layouts/application (0.4ms)
+  Parameters: {"bid"=>{"fname"=>"Николай", "lname"=>"Иванов", "patr"=>"Тест", "tel"=>"84956745463", "email"=>"gg@g.com", "terms"=>"on", "offer"=>"8", "aut_type"=>"car"}, "id"=>"8"}
+Completed 200 OK in 34ms (Views: 11.7ms | ActiveRecord: 3.8ms)
+  Rendered cars/show.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 61ms (Views: 55.5ms | ActiveRecord: 2.3ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 17:26:50 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.9ms)
+Started POST "/bids/1" for 81.88.209.175 at 2015-09-09 17:27:08 +0000
+Processing by BidsController#close as HTML
+  Parameters: {"authenticity_token"=>"J8kgfR/Tlf0xhrse0+pPNKRfrznRMb+YS8IGLQPS46c=", "id"=>"1"}
+Redirected to http://xn--80ajb4aberjfzc.xn--p1ai/bids/show
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 17:27:08 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 17:27:09 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 1.5ms)
+Started GET "/" for 213.180.206.196 at 2015-09-09 18:09:16 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 1.7ms)
+Started GET "/10/Classes/Language.php" for 193.19.118.8 at 2015-09-09 18:13:21 +0000
+
+ActionController::RoutingError (No route matches [GET] "/10/Classes/Language.php"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  puma (2.3.2) lib/puma/configuration.rb:66:in `call'
+  puma (2.3.2) lib/puma/server.rb:371:in `handle_request'
+  puma (2.3.2) lib/puma/server.rb:248:in `process_client'
+  puma (2.3.2) lib/puma/server.rb:147:in `block in run'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.3.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+Started GET "/" for 81.88.209.175 at 2015-09-09 18:15:28 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 31ms (Views: 26.3ms | ActiveRecord: 1.6ms)
+Started GET "/trucks" for 81.88.209.175 at 2015-09-09 18:15:35 +0000
+Processing by TrucksController#index as HTML
+  Rendered trucks/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.9ms)
+Started GET "/home/companies" for 81.88.209.175 at 2015-09-09 18:15:36 +0000
+Processing by HomeController#companies as HTML
+  Rendered home/companies.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+Started GET "/" for 185.75.180.162 at 2015-09-09 18:19:39 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 1.9ms)
+Started GET "/" for 185.75.180.162 at 2015-09-09 18:23:47 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 1.4ms)
+* Restarting...
+Puma starting in single mode...
+* Version 2.3.2, codename: Delicious Thin Mints
+* Min threads: 0, max threads: 16
+* Environment: production
+* Inherited unix:///tmp/technohunter.sock
+* Daemonizing...
+=== puma startup: 2015-09-09 18:28:05 +0000 ===
+Started GET "/" for 81.88.209.175 at 2015-09-09 18:28:07 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (87.4ms)
+Completed 200 OK in 269ms (Views: 134.2ms | ActiveRecord: 9.4ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 18:28:13 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 1.6ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 18:28:40 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 1.5ms)
+Started GET "/users/sign_in" for 81.88.209.175 at 2015-09-09 18:28:45 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+Started POST "/users/sign_in" for 81.88.209.175 at 2015-09-09 18:29:13 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H3wHmkh5Ko3pFnO3UakRJEmgxR2AJb0fMfZBfVeirkY=", "user"=>{"email"=>"admin@site.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Войти"}
+Redirected to http://xn--80ajb4aberjfzc.xn--p1ai/
+Completed 302 Found in 116ms (ActiveRecord: 6.5ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 18:29:13 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 1.8ms)
+Started GET "/cars/5" for 81.88.209.175 at 2015-09-09 18:29:20 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.5ms)
+Started POST "/cars/bids/create" for 81.88.209.175 at 2015-09-09 18:29:40 +0000
+Processing by BidsController#create as JS
+  Parameters: {"bid"=>{"fname"=>"Giggling", "lname"=>"Dd", "patr"=>"Err", "tel"=>"222", "email"=>"jkk", "terms"=>"on", "offer"=>"5", "aut_type"=>"car"}}
+  Rendered bids/create.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 19.2ms | ActiveRecord: 2.0ms)
+Started GET "/cars/5?bid%5Bfname%5D=Giggling&bid%5Blname%5D=Dd&bid%5Bpatr%5D=Err&bid%5Btel%5D=222&bid%5Bemail%5D=jkk&bid%5Bterms%5D=on&bid%5Boffer%5D=5&bid%5Baut_type%5D=car" for 81.88.209.175 at 2015-09-09 18:29:41 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Giggling", "lname"=>"Dd", "patr"=>"Err", "tel"=>"222", "email"=>"jkk", "terms"=>"on", "offer"=>"5", "aut_type"=>"car"}, "id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.5ms)
+Started GET "/users/sign_in" for 81.88.209.175 at 2015-09-09 18:29:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.2ms)
+Started POST "/users/sign_in" for 81.88.209.175 at 2015-09-09 18:29:55 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aRS5qmRFK8Zwy//bQl2RuHtIdwTwXxZdm//9TC/9194=", "user"=>{"email"=>"admin@site.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Войти"}
+Redirected to http://technohunter.ru/
+Completed 302 Found in 101ms (ActiveRecord: 5.4ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 18:29:55 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 1.8ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 18:29:59 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.7ms)
+Started GET "/cars/5" for 81.88.209.175 at 2015-09-09 18:30:16 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.6ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 18:30:19 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 40ms (Views: 33.4ms | ActiveRecord: 1.6ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 18:30:22 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+Started GET "/" for 185.79.100.105 at 2015-09-09 18:43:09 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 30ms (Views: 25.8ms | ActiveRecord: 1.7ms)
+Started GET "/" for 185.79.100.105 at 2015-09-09 18:43:10 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 1.7ms)
+Started GET "/trucks/2" for 185.79.100.105 at 2015-09-09 18:43:24 +0000
+Processing by TrucksController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendered trucks/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+Started GET "/trucks/2?bid%5Bfname%5D=%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD&bid%5Blname%5D=%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87&bid%5Bpatr%5D=%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2&bid%5Btel%5D=89851723559&bid%5Bemail%5D=roman%40roman.ru&bid%5Bterms%5D=on&bid%5Boffer%5D=2&bid%5Baut_type%5D=truck" for 185.79.100.105 at 2015-09-09 18:44:06 +0000
+Processing by TrucksController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Роман", "lname"=>"Романович", "patr"=>"Романов", "tel"=>"89851723559", "email"=>"roman@roman.ru", "terms"=>"on", "offer"=>"2", "aut_type"=>"truck"}, "id"=>"2"}
+  Rendered trucks/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 0.4ms)
+Started GET "/users/sign_in" for 185.79.100.105 at 2015-09-09 18:45:17 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+Started POST "/users/sign_in" for 185.79.100.105 at 2015-09-09 18:45:41 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rOSRaRelgv08Nwbo+yH6SDv5hVWWSfcn6lrusdlWeHg=", "user"=>{"email"=>"admin@technohunter.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Войти"}
+Redirected to http://technohunter.ru/
+Completed 302 Found in 108ms (ActiveRecord: 9.4ms)
+Started GET "/" for 185.79.100.105 at 2015-09-09 18:45:41 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 1.9ms)
+Started GET "/bids/show" for 185.79.100.105 at 2015-09-09 18:45:45 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+Started GET "/" for 185.79.100.105 at 2015-09-09 18:46:03 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 52ms (Views: 43.1ms | ActiveRecord: 2.8ms)
+Started GET "/cars/5" for 185.79.100.105 at 2015-09-09 18:46:05 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+Started GET "/cars/5?bid%5Bfname%5D=%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD&bid%5Blname%5D=%D0%A0%D0%BE&bid%5Bpatr%5D=%D0%A0%D0%BE%D0%B8%D0%BC%D0%BE&bid%5Btel%5D=89851723559&bid%5Bemail%5D=ro%40ma.ru&bid%5Bterms%5D=on&bid%5Boffer%5D=5&bid%5Baut_type%5D=car" for 185.79.100.105 at 2015-09-09 18:46:40 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Роман", "lname"=>"Ро", "patr"=>"Роимо", "tel"=>"89851723559", "email"=>"ro@ma.ru", "terms"=>"on", "offer"=>"5", "aut_type"=>"car"}, "id"=>"5"}
+  Rendered cars/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+Started GET "/moderate/index" for 185.79.100.105 at 2015-09-09 18:46:45 +0000
+Processing by ModerateController#index as HTML
+  Rendered moderate/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+Started GET "/bids/show" for 185.79.100.105 at 2015-09-09 18:46:48 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 19:03:36 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 19:06:09 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 35ms (Views: 28.3ms | ActiveRecord: 1.7ms)
+Started GET "/trucks/1" for 81.88.209.175 at 2015-09-09 19:06:12 +0000
+Processing by TrucksController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered trucks/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.6ms)
+Started POST "/trucks/bids/create" for 81.88.209.175 at 2015-09-09 19:06:22 +0000
+Processing by BidsController#create as JS
+  Parameters: {"bid"=>{"fname"=>"Николай", "lname"=>"Иванов", "patr"=>"Петрович", "tel"=>"84997654323", "email"=>"test2@mail.ru", "terms"=>"on", "offer"=>"1", "aut_type"=>"truck"}}
+Started GET "/trucks/1?bid%5Bfname%5D=%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9&bid%5Blname%5D=%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2&bid%5Bpatr%5D=%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87&bid%5Btel%5D=84997654323&bid%5Bemail%5D=test2%40mail.ru&bid%5Bterms%5D=on&bid%5Boffer%5D=1&bid%5Baut_type%5D=truck" for 81.88.209.175 at 2015-09-09 19:06:22 +0000
+Processing by TrucksController#show as HTML
+  Rendered bids/create.html.erb within layouts/application (0.1ms)
+  Parameters: {"bid"=>{"fname"=>"Николай", "lname"=>"Иванов", "patr"=>"Петрович", "tel"=>"84997654323", "email"=>"test2@mail.ru", "terms"=>"on", "offer"=>"1", "aut_type"=>"truck"}, "id"=>"1"}
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 2.1ms)
+  Rendered trucks/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 2.3ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 19:06:24 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.6ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 19:06:54 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 1.7ms)
+Started GET "/cars/6" for 81.88.209.175 at 2015-09-09 19:07:02 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendered cars/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 0.8ms)
+Started POST "/cars/bids/create" for 81.88.209.175 at 2015-09-09 19:07:49 +0000
+Processing by BidsController#create as JS
+  Parameters: {"bid"=>{"fname"=>"Yyy", "lname"=>"Yyy", "patr"=>"Yyy", "tel"=>"25863", "email"=>"hhhh@ty.com", "terms"=>"on", "offer"=>"6", "aut_type"=>"car"}}
+  Rendered bids/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 3.3ms)
+Started GET "/cars/6?bid%5Bfname%5D=Yyy&bid%5Blname%5D=Yyy&bid%5Bpatr%5D=Yyy&bid%5Btel%5D=25863&bid%5Bemail%5D=hhhh%40ty.com&bid%5Bterms%5D=on&bid%5Boffer%5D=6&bid%5Baut_type%5D=car" for 81.88.209.175 at 2015-09-09 19:07:49 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Yyy", "lname"=>"Yyy", "patr"=>"Yyy", "tel"=>"25863", "email"=>"hhhh@ty.com", "terms"=>"on", "offer"=>"6", "aut_type"=>"car"}, "id"=>"6"}
+  Rendered cars/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 19:07:53 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.7ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 19:08:13 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 1.6ms)
+Started DELETE "/users/sign_out" for 81.88.209.175 at 2015-09-09 19:08:15 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YdDDyDCnitGLOeLedrmMhlf/ViafFUbOhLu3cqiWc1E="}
+Redirected to http://xn--80ajb4aberjfzc.xn--p1ai/
+Completed 302 Found in 9ms (ActiveRecord: 3.2ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 19:08:15 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 1.4ms)
+Started GET "/equips/1" for 81.88.209.175 at 2015-09-09 19:08:19 +0000
+Processing by EquipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered equips/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+Started POST "/equips/bids/create" for 81.88.209.175 at 2015-09-09 19:08:42 +0000
+Processing by BidsController#create as JS
+  Parameters: {"bid"=>{"fname"=>"Ppppopp", "lname"=>"PPP", "patr"=>"High", "tel"=>"2588", "email"=>"ttttt", "terms"=>"on", "offer"=>"1", "aut_type"=>"equip"}}
+  Rendered bids/create.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 2.5ms)
+Started GET "/equips/1?bid%5Bfname%5D=Ppppopp&bid%5Blname%5D=PPP&bid%5Bpatr%5D=High&bid%5Btel%5D=2588&bid%5Bemail%5D=ttttt&bid%5Bterms%5D=on&bid%5Boffer%5D=1&bid%5Baut_type%5D=equip" for 81.88.209.175 at 2015-09-09 19:08:42 +0000
+Processing by EquipsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"Ppppopp", "lname"=>"PPP", "patr"=>"High", "tel"=>"2588", "email"=>"ttttt", "terms"=>"on", "offer"=>"1", "aut_type"=>"equip"}, "id"=>"1"}
+  Rendered equips/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 19:08:46 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.7ms)
+Started GET "/trucks/1" for 81.88.209.175 at 2015-09-09 19:09:17 +0000
+Processing by TrucksController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered trucks/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+Started GET "/equips/1" for 81.88.209.175 at 2015-09-09 19:09:20 +0000
+Processing by EquipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered equips/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.6ms)
+Started GET "/" for 81.88.209.175 at 2015-09-09 19:10:10 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 49ms (Views: 42.8ms | ActiveRecord: 2.0ms)
+Started GET "/cars/9" for 81.88.209.175 at 2015-09-09 19:10:16 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"9"}
+  Rendered cars/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+Started GET "/cars/9?bid%5Bfname%5D=%D0%B2%D0%B0%D0%B2%D0%B0%D0%B0&bid%5Blname%5D=%D0%B2%D0%B2%D0%B0%D0%B2%D0%B2%D0%B0&bid%5Bpatr%5D=%D0%B0%D0%B2%D1%8B%D0%B0&bid%5Btel%5D=3223&bid%5Bemail%5D=%D0%B0%D1%8B%D0%B2%D1%8B%D0%B2%D0%B0%D0%B2&bid%5Bterms%5D=on&bid%5Boffer%5D=9&bid%5Baut_type%5D=car" for 81.88.209.175 at 2015-09-09 19:10:24 +0000
+Processing by CarsController#show as HTML
+  Parameters: {"bid"=>{"fname"=>"ваваа", "lname"=>"ввавва", "patr"=>"авыа", "tel"=>"3223", "email"=>"аывывав", "terms"=>"on", "offer"=>"9", "aut_type"=>"car"}, "id"=>"9"}
+  Rendered cars/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 19:10:27 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+Started GET "/bids/show" for 81.88.209.175 at 2015-09-09 19:10:28 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+Started GET "/moderate/index" for 176.14.123.123 at 2015-09-09 19:10:50 +0000
+Processing by ModerateController#index as HTML
+  Rendered moderate/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 2.3ms)
+Started GET "/moderate/index" for 176.14.123.123 at 2015-09-09 19:10:55 +0000
+Processing by ModerateController#index as HTML
+  Rendered moderate/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 1.1ms)
+Started GET "/bids/show" for 176.14.123.123 at 2015-09-09 19:10:58 +0000
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendered bids/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+Started GET "/profile/show" for 176.14.123.123 at 2015-09-09 19:11:00 +0000
+Processing by ProfileController#show as HTML
+  Rendered profile/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+Started GET "/" for 176.14.123.123 at 2015-09-09 19:11:06 +0000
+Processing by OffersController#index as HTML
+  Rendered offers/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 31ms (Views: 26.0ms | ActiveRecord: 1.5ms)
+Started GET "/trucks/4" for 176.14.123.123 at 2015-09-09 19:11:10 +0000
+Processing by TrucksController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendered trucks/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.5ms)

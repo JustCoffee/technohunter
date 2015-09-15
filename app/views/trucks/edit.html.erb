@@ -19,14 +19,14 @@
     <div class="form-group">
       <label class="col-sm-2 control-label" for="region">Регион:</label>
       <div class="col-sm-4">
-        <%= f.select :region, options_for_select(Region.all.collect {|region| [region.name]}),{:include_blank => "Выберите регион..."},{class: "form-control input-sm", type: "text"} %>
+        <%= f.select :region, options_for_select(Region.all.collect {|region| [region.name]}, @truck.region),{:include_blank => "Выберите регион..."},{class: "form-control input-sm", type: "text"} %>
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-sm-2 control-label" for="city">Город:</label>
       <div class="col-sm-4">
-        <%= f.select :city, options_for_select({},0),{:include_blank => "Выберите город..."},{class: "form-control input-sm", type: "text"} %>
+        <%= f.select :city, options_for_select([@truck.city],@truck.city),{:include_blank => "Выберите город..."},{class: "form-control input-sm", type: "text"} %>
       </div>
     </div>
 

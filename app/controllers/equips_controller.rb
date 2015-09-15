@@ -11,9 +11,11 @@ class EquipsController < ApplicationController
   # GET /equips/1
   # GET /equips/1.json
   def show
-
     @bid = Bid.new
     @pic = @equip.pictures
+    if can? :show_moder_panel, @equip
+      @user = User.find_by(id: @equip.user_id)
+    end
   end
 
   # GET /equips/new
@@ -120,6 +122,6 @@ class EquipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equip_params
-      params.require(:equip).permit(:vin_code ,:region ,:city, :equip_type, :brand, :model, :year, :hofuse, :status, :desc, :price)
+      params.require(:equip).permit(:vin_code ,:region ,:city, :equip_type, :other_brand, :other_model ,:brand, :model, :year, :hofuse, :status, :desc, :price)
     end
 end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/companies'
   get 'home/about'
   get 'profile/show'
+  post 'bids/create', to: 'bids#create'
 
   match "/equips/new" => "equips#create", :via => "post"
   get 'equips/:id/update_cities' => 'equips#update_cities'

@@ -14,6 +14,9 @@ class TrucksController < ApplicationController
   def show
     @bid = Bid.new
     @pic = @truck.pictures
+    if can? :show_moder_panel, @truck
+      @user = User.find_by(id: @truck.user_id)
+    end
   end
 
   # GET /trucks/new

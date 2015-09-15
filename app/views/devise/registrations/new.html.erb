@@ -72,6 +72,12 @@
       </div>
     </div>
     <div class="form-group">
+      <label class="col-sm-3 control-label" for="offer_title">Email осн. контактного лица</label>
+      <div class="col-sm-4">
+        <%= f.email_field :email_main, class: "form-control input-sm" %>
+      </div>
+    </div>
+    <div class="form-group">
       <label class="col-sm-3 control-label" for="offer_title">Городской телефон осн. контактного лица</label>
       <div class="col-sm-4">
         <%= f.text_field :gor_tel_main, class: "form-control input-sm" %>

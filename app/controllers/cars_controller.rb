@@ -12,9 +12,11 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
-
     @bid = Bid.new
     @pic = @car.pictures
+    if can? :show_moder_panel, @car
+      @user = User.find_by(id: @car.user_id)
+    end
   end
 
   # GET /cars/new

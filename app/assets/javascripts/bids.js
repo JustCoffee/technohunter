@@ -1,14 +1,17 @@
-$(document).ready(function() {
-	$("#popup").magnificPopup();
+$(document).on("page:change", function() {
+  $("#popup").magnificPopup();
 
-	$("#new_bid").submit(function() {
-		$.ajax({
-			type: "POST",
-			dataType: 'script',
-			url: "bids/create",
-			data: $(this).serialize()
-		}).done(function() {
-			alert($(this).serialize());
-		});
-	});
+  $("#new_bid").submit(function(e) {
+  	e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      dataType: 'html',
+      url: $(this).attr("action"),
+      data: $(this).serialize(),
+      success: function() {
+        $("#popup").magnificPopup('close'); 
+        alert("Спасибо за заявку!");
+      }
+    });
+  });
 });

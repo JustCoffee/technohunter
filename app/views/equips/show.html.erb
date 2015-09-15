@@ -6,7 +6,7 @@
       })
   });
 
-$(document).ready(function(){
+$(document).on('page:load',function(){
   $(":checkbox").change(function() {
     if (!$(this).is(":checked")){
       console.log("Выключить");
@@ -17,8 +17,35 @@ $(document).ready(function(){
       $('#button').removeAttr('disabled');
     }
   });
+  $("#popup").magnificPopup();
+
+  $("#new_bid").submit(function() {
+    $.ajax({
+      type: "POST",
+      dataType: 'script',
+      url: "bids/create",
+      data: $(this).serialize()
+    }).done(function() {
+      alert($(this).serialize());
+    });
+  });
 });
 </script>
+
+<style type="text/css">
+  .spoiler-head
+  {
+      cursor: pointer;
+      color: #FF6816;
+      padding-top: 20px;
+  }
+
+  .spoiler-body
+  {
+      border-top: 1px solid #C3CBD1;
+      padding-bottom: 20px;
+  }
+</style>
 
 <p id="notice"><%= notice %></p>
 
@@ -108,7 +135,7 @@ $(document).ready(function(){
             Цена
           </td>
           <td class="text-success">
-            <strong> <%= @equip.price %> руб. </strong>
+            <strong> <%= number_with_delimiter(@equip.price, precision: 0, delimiter: " ") %> руб. </strong>
           </td>
         </tr> 
       </tbody>
@@ -121,23 +148,32 @@ $(document).ready(function(){
       <a href="<%= edit_equip_path(@equip) %>" class="btn btn-success">Редактировать</a>
     <% end %>
 
-      <a href="#new_bid" id="popup" class="btn btn-success">Оставить заявку</a>
+    <a href="#new_bid" id="popup" class="btn btn-success">Оставить заявку</a>
 
     <a href="<%= equips_path %>" class="btn btn-default">Назад</a>
+
+    <% if can? :show_moder_panel, @equip %>
+      <div class="spoiler-head">Информация о партнере</div>
+      <div class="spoiler-body">Компания: <%= @user.comp_name %><br>
+                                Сайт:     <%= @user.site %> <br>
+                                ФИО осн. контактного лица: <%= @user.fio_main_person %> <br>
+                                Телефон основного лица:  <%= @user.gor_tel_main %> <br>
+                                ФИО доп. контактного лица: <%= @user.fio_dop_person %> <br>
+                                Телефон дополнительного лица: <%= @user.gor_tel_dop %> <br>
+      </div>
+    <% end %>
 </div>
     <div class="hidden">
-      <form class="new_bid" id="new_bid">
+      <form class="new_bid" id="new_bid" action="../bids/create">
         <p><strong>Оставьте свои контактные данные,<br>
              наш менеджер с Вами свяжется.</strong></p>
-        <input type="text" name="bid[fname]" placeholder="Имя" /><br>
-        <input type="text" name="bid[lname]" placeholder="Фамилия" /><br>
-        <input type="text" name="bid[patr]" placeholder="Отчество" /><br>
-        <input type="tel" name="bid[tel]" placeholder="Телефон" /><br>
-        <input type="email" name="bid[email]" placeholder="Email" /><br>
+        <input type="text" name="bid[fname]" placeholder="Имя" required /><br>
+        <input type="text" name="bid[lname]" placeholder="Фамилия" required /><br>
+        <input type="text" name="bid[patr]" placeholder="Отчество" required /><br>
+        <input type="tel" name="bid[tel]" placeholder="Телефон" required /><br>
+        <input type="email" name="bid[email]" placeholder="Email" required /><br>
 
-        <input type="checkbox" checked="true" class="check" id="check" name="bid[terms]"> Я согласен с политикой конфиденциальности. 
-
-        <div><a target="_blank" href="../home/terms">Политика конфиденциальности</a></div>
+        <input type="checkbox" checked="true" class="check" id="check" name="bid[terms]"> Я согласен с <a target="_blank" href="../home/terms"> политикой конфиденциальности. </a>
 
         <input class="hidden" name="bid[offer]" value="<%= @equip.id %>"></p>
         <input class="hidden" name="bid[aut_type]" value="equip"></p>

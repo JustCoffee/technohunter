@@ -16,7 +16,7 @@
             <td>НЕТ ФОТО</td>
         <% end %>
         <td style="cursor: pointer;"><strong><%= car.brand %> <%= car.model %>, <%= car.year %><br></strong>
-                    <%= car.price %> руб.<br>
+                    <%= number_with_delimiter(car.price, precision: 0, delimiter: " ") %> руб.<br>
                     <%= car.region %>, <%= car.city %><br><br>
                     Объявление создано:<br>
                     <%= car.created_at %>
@@ -29,7 +29,3 @@
 <br>
 <%= will_paginate @cars %>
 <br>
-
-<% if can? :create, Car %>
-  <a href="<%= new_car_path %>" class="btn btn-default">Создать новое</a>
-<% end %>

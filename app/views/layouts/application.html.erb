@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TestApp</title>
+  <title>Technohunter.ru | Вся изъятая техника Лизинговых компаний и Банков</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/lumen/bootstrap.min.css" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+  <script>
+
+    $(document).on("page:change", function(){
+      $("#auto_type").on('change',function() {
+        if ($(this).val() == 0){
+          console.log("Поиск не работает");
+          $('#search_btn').attr('disabled','1');
+        }
+        else{
+          console.log("Работает");
+          $('#search_btn').removeAttr('disabled');
+        }
+      });
+    });
+  </script>
+
   <style type="text/css">
+    .navbar-right{
+      margin-right: -20px;
+      
+    }
 
     .main_text {
       float: left;
@@ -41,13 +62,7 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-
-
-
-
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="<%= offers_path %>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong>Предложения </strong><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -106,7 +121,7 @@
   <div class="search">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h2 class="panel-title">Поиск</h2>
+        <h2 class="panel-title">Поиск техники</h2>
       </div>
       
       <div class="panel-body">
@@ -131,8 +146,8 @@
               <label for="select" >*Тип техники (обязательно!):</label>
               <div>
                 <select class="form-control" id="auto_type" name="Auto" type="auto_type">
-                  <option>Выбирете тип...</option>
-                  <option selected="true" value="1">Легковой транспорт</option>
+                  <option value="0" selected="true" >Выберите тип...</option>
+                  <option value="1">Легковой транспорт</option>
                   <option value="2">Грузовой транспорт и спецтехника</option>
                   <option value="3">Оборудование</option>
                 </select>
@@ -171,7 +186,7 @@
 
             <div>
               <div>
-                <button type="submit" class="btn btn-primary">Найти</button>
+                <button type="submit" disabled="disabled" id="search_btn" class="btn btn-primary">Найти</button>
               </div>
             </div>
           </fieldset>
@@ -180,6 +195,8 @@
     </div>
   </div>
 </div>
+
+<div style="text-align: center;">  © 2015 Technohunter.ru </div>
 
 </body>
 </html>

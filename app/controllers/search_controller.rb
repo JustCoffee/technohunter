@@ -23,7 +23,7 @@ class SearchController < ApplicationController
       puts "YEAAAAAAAAAAAAAAAAR"
       @request += " AND year >= :yearFrom AND year <= :yearUntil"
     end
-    @request += " AND moder = true"
+    @request += " AND moder = true AND NOT offer_status = 0"
     @request = @request[4..-1]
 ###########################################################################
         puts @request
